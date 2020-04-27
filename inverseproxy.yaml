@@ -14,6 +14,7 @@ services:
       - "12069:12069"
     depends_on:
       - dockersocket
+      - whoami
     restart: unless-stopped
     privileged: true
     tty: true
@@ -32,6 +33,7 @@ services:
       - --Docker.EndPoint=http://dockersocket:2375
       - --Docker.ExposedByDefault=false
       - --Docker.Watch
+      - --certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json
 
   dockersocket:
     image: tecnativa/docker-socket-proxy
@@ -47,6 +49,15 @@ services:
       SWARM: 1
       TASKS: 1
     restart: unless-stopped
+
+  whoami:
+    image: "containous/whoami"
+    container_name: "simple-service"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`*.dev.odoo13.wedoo.tech`)"
+      - "traefik.http.routers.whoami.entrypoints=websecure"
+      - "traefik.http.routers.whoami.tls.certresolver=myresolver"
 
 networks:
   shared:
