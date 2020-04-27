@@ -26,7 +26,7 @@ services:
       - --ACME.Storage=/etc/traefik/acme/acme.json
       - --DefaultEntryPoints=http,https
       - --EntryPoints=Name:http Address::12070 Redirect.EntryPoint:https
-      - --EntryPoints=Name:https Address::12069 TLS
+      - --EntryPoints=Name:https Address::12069 TLS:server.crt,server.key
       - --LogLevel=INFO
       - --Docker
       - --Docker.EndPoint=http://dockersocket:2375
