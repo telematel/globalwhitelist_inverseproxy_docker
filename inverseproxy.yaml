@@ -14,7 +14,6 @@ services:
       - "443:443"
     depends_on:
       - dockersocket
-      - whoami
     restart: unless-stopped
     privileged: true
     tty: true
@@ -48,15 +47,6 @@ services:
       SWARM: 1
       TASKS: 1
     restart: unless-stopped
-
-  whoami:
-    image: "containous/whoami"
-    container_name: "simple-service"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`*.dev.odoo13.wedoo.tech`)"
-      - "traefik.http.routers.whoami.entrypoints=websecure"
-      - "traefik.http.routers.whoami.tls.certresolver=myresolver"
 
 networks:
   shared:
