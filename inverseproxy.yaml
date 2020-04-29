@@ -10,8 +10,8 @@ services:
     volumes:
       - acme:/etc/traefik/acme:rw,Z
     ports:
-      - "12070:12070"
-      - "12069:12069"
+      - "80:80"
+      - "443:443"
     depends_on:
       - dockersocket
       - whoami
@@ -26,8 +26,8 @@ services:
       - --ACME.OnHostRule
       - --ACME.Storage=/etc/traefik/acme/acme.json
       - --DefaultEntryPoints=http,https
-      - --EntryPoints=Name:http Address::12070 Redirect.EntryPoint:https
-      - --EntryPoints=Name:https Address::12069 TLS
+      - --EntryPoints=Name:http Address::80 Redirect.EntryPoint:https
+      - --EntryPoints=Name:https Address::443 TLS
       - --LogLevel=INFO
       - --Docker
       - --Docker.EndPoint=http://dockersocket:2375
