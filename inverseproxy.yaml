@@ -33,7 +33,6 @@ services:
       - --Docker.EndPoint=http://dockersocket:2375
       - --Docker.ExposedByDefault=false
       - --Docker.Watch
-      - --certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json
 
   dockersocket:
     image: tecnativa/docker-socket-proxy
