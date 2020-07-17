@@ -9,6 +9,7 @@ services:
       public:
     volumes:
       - acme:/etc/traefik/acme:rw,Z
+      - ./traefik.toml:/etc/traefk/traefik.toml
     ports:
       - "80:80"
       - "443:443"
@@ -18,8 +19,9 @@ services:
     privileged: true
     tty: true
     command:
+      - --file.filename=/etc/traefk/traefik.toml
       - --ACME.ACMELogging
-      - --ACME.Email=you@example.com
+      - --ACME.Email=jai@dev.wedoo.tech
       - --ACME.EntryPoint=https
       - --ACME.HTTPChallenge.entryPoint=http
       - --ACME.OnHostRule
@@ -27,7 +29,7 @@ services:
       - --DefaultEntryPoints=http,https
       - --EntryPoints=Name:http Address::80 Redirect.EntryPoint:https
       - --EntryPoints=Name:https Address::443 TLS
-      - --LogLevel=INFO
+      - --LogLevel=DEBUG
       - --Docker
       - --Docker.EndPoint=http://dockersocket:2375
       - --Docker.ExposedByDefault=false
@@ -63,3 +65,4 @@ networks:
 
 volumes:
   acme:
+
