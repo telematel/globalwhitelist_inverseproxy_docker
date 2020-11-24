@@ -5,6 +5,11 @@
       expression = "NetworkErrorRatio() > 0.5"
     [backends.backend1.servers.server1]
     url = "http://74.208.235.53:8069"
+    [backends.backend1.buffering]
+      maxRequestBodyBytes = 10485760  
+      memRequestBodyBytes = 2097152  
+      maxResponseBodyBytes = 104857600
+      memResponseBodyBytes = 209715200
 [frontends]
   [frontends.frontend1]
   backend = "backend1"
