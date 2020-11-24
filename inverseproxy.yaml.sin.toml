@@ -9,7 +9,6 @@ services:
       public:
     volumes:
       - acme:/etc/traefik/acme:rw,Z
-      - ./traefik.toml:/etc/traefk/traefik.toml
     ports:
       - "80:80"
       - "443:443"
@@ -19,7 +18,6 @@ services:
     privileged: true
     tty: true
     command:
-      - --file.filename=/etc/traefk/traefik.toml
       - --ACME.ACMELogging
       - --ACME.Email=jai@dev.wedoo.tech
       - --ACME.EntryPoint=https

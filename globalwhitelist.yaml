@@ -69,3 +69,48 @@ services:
     environment:
       TARGET: "www.gravatar.com"
       PRE_RESOLVE: 1
+  api_github_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api.github.com"
+    environment:
+      TARGET: "api.github.com"
+      PRE_RESOLVE: 1
+  facturacion_itadmin_com_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "facturacion.itadmin.com.mx"
+    environment:
+      TARGET: "facturacion.itadmin.com.mx"
+      PRE_RESOLVE: 1
+  pas_telematel_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "pas.telematel.com"
+    environment:
+      TARGET: "pas.telematel.com"
+      PRE_RESOLVE: 1
+  services_openerp_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "services.openerp.com"
+    environment:
+      TARGET: "services.openerp.com"
+      PRE_RESOLVE: 1
+
