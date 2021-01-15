@@ -113,4 +113,25 @@ services:
     environment:
       TARGET: "services.openerp.com"
       PRE_RESOLVE: 1
-
+  openpay_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "openpay.mx"
+    environment:
+      TARGET: "openpay.mx"
+      PRE_RESOLVE: 1
+  sat_gob_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "sat.gob.mx"
+    environment:
+      TARGET: "sat.gob.mx"
+      PRE_RESOLVE: 1
