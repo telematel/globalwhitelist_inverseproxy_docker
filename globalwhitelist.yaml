@@ -135,3 +135,14 @@ services:
     environment:
       TARGET: "sat.gob.mx"
       PRE_RESOLVE: 1
+  demo-facturacion_finkok_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "demo-facturacion.finkok.com"
+    environment:
+      TARGET: "demo-facturacion.finkok.com"
+      PRE_RESOLVE: 1
