@@ -146,3 +146,25 @@ services:
     environment:
       TARGET: "demo-facturacion.finkok.com"
       PRE_RESOLVE: 1
+  solucionfactible_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "solucionfactible.com"
+    environment:
+      TARGET: "solucionfactible.com"
+      PRE_RESOLVE: 1
+  facturacion_finkok_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "facturacion.finkok.com"
+    environment:
+      TARGET: "facturacion.finkok.com"
+      PRE_RESOLVE: 1
