@@ -168,3 +168,14 @@ services:
     environment:
       TARGET: "facturacion.finkok.com"
       PRE_RESOLVE: 1
+  sandbox-api_openpay_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "sandbox-api.openpay.mx"
+    environment:
+      TARGET: "sandbox-api.openpay.mx"
+      PRE_RESOLVE: 1
