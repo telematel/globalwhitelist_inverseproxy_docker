@@ -190,3 +190,14 @@ services:
     environment:
       TARGET: "sandbox-api.openpay.mx"
       PRE_RESOLVE: 1
+  testing_solucionfactible_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "testing.solucionfactible.com"
+    environment:
+      TARGET: "testing.solucionfactible.com"
+      PRE_RESOLVE: 1
