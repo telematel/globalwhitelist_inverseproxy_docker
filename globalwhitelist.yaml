@@ -201,3 +201,14 @@ services:
     environment:
       TARGET: "testing.solucionfactible.com"
       PRE_RESOLVE: 1
+  wppsandbox_mit_com_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "wppsandbox.mit.com.mx"
+    environment:
+      TARGET: "wppsandbox.mit.com.mx"
+      PRE_RESOLVE: 1
