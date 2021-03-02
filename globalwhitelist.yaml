@@ -212,3 +212,14 @@ services:
     environment:
       TARGET: "wppsandbox.mit.com.mx"
       PRE_RESOLVE: 1
+  sandbox-dashboard_openpay_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "sandbox-dashboard.openpay.mx"
+    environment:
+      TARGET: "sandbox-dashboard.openpay.mx"
+      PRE_RESOLVE: 1
