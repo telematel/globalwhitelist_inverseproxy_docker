@@ -223,3 +223,14 @@ services:
     environment:
       TARGET: "sandbox-dashboard.openpay.mx"
       PRE_RESOLVE: 1
+  qa5_mitec_com_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "qa5.mitec.com.mx"
+    environment:
+      TARGET: "qa5.mitec.com.mx"
+      PRE_RESOLVE: 1
