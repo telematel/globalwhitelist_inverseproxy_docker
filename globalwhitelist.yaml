@@ -234,3 +234,14 @@ services:
     environment:
       TARGET: "qa5.mitec.com.mx"
       PRE_RESOLVE: 1
+  consultaqr.facturaelectronica.sat.gob.mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "consultaqr.facturaelectronica.sat.gob.mx"
+    environment:
+      TARGET: "consultaqr.facturaelectronica.sat.gob.mx"
+      PRE_RESOLVE: 1
