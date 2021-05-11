@@ -245,3 +245,14 @@ services:
     environment:
       TARGET: "consultaqr.facturaelectronica.sat.gob.mx"
       PRE_RESOLVE: 1
+  www_googleapis_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "www.googleapis.com"
+    environment:
+      TARGET: "www.googleapis.com"
+      PRE_RESOLVE: 1
