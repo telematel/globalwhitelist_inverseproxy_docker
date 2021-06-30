@@ -256,3 +256,14 @@ services:
     environment:
       TARGET: "www.googleapis.com"
       PRE_RESOLVE: 1
+  api_zoom_us:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api.zoom.us"
+    environment:
+      TARGET: "api.zoom.us"
+      PRE_RESOLVE: 1
