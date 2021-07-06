@@ -267,3 +267,14 @@ services:
     environment:
       TARGET: "api.zoom.us"
       PRE_RESOLVE: 1
+  us02web_zoom_us:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "us02web.zoom.us"
+    environment:
+      TARGET: "us02web.zoom.us"
+      PRE_RESOLVE: 1
