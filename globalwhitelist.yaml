@@ -278,3 +278,14 @@ services:
     environment:
       TARGET: "us02web.zoom.us"
       PRE_RESOLVE: 1
+  api_nubarium_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api.nubarium.com"
+    environment:
+      TARGET: "api.nubarium.com"
+      PRE_RESOLVE: 1
