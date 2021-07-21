@@ -289,3 +289,14 @@ services:
     environment:
       TARGET: "api.nubarium.com"
       PRE_RESOLVE: 1
+  ine_nubarium_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "ine.nubarium.com"
+    environment:
+      TARGET: "ine.nubarium.com"
+      PRE_RESOLVE: 1
