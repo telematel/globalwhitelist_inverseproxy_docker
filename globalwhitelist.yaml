@@ -300,3 +300,14 @@ services:
     environment:
       TARGET: "ine.nubarium.com"
       PRE_RESOLVE: 1
+  services_test_sw_com_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "services.test.sw.com.mx"
+    environment:
+      TARGET: "services.test.sw.com.mx"
+      PRE_RESOLVE: 1
