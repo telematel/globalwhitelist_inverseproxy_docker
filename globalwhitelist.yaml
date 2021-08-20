@@ -311,3 +311,14 @@ services:
     environment:
       TARGET: "services.test.sw.com.mx"
       PRE_RESOLVE: 1
+  robotapitest_dostavista_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "robotapitest.dostavista.mx"
+    environment:
+      TARGET: "robotapitest.dostavista.mx"
+      PRE_RESOLVE: 1
