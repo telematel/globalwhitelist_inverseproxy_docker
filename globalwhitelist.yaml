@@ -322,3 +322,15 @@ services:
     environment:
       TARGET: "robotapitest.dostavista.mx"
       PRE_RESOLVE: 1
+  
+  robotapitest_mx_borzodelivery:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "robotapitest-mx.borzodelivery.com"
+    environment:
+      TARGET: "robotapitest-mx.borzodelivery.com"
+      PRE_RESOLVE: 1
