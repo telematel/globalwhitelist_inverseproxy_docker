@@ -334,3 +334,14 @@ services:
     environment:
       TARGET: "robotapitest-mx.borzodelivery.com"
       PRE_RESOLVE: 1
+  demo-facturacion.finkok.com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "demo-facturacion.finkok.com"
+    environment:
+      TARGET: "demo-facturacion.finkok.com"
+      PRE_RESOLVE: 1
