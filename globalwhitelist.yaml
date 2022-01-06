@@ -345,3 +345,14 @@ services:
     environment:
       TARGET: "demo-facturacion.finkok.com"
       PRE_RESOLVE: 1
+  wsaahomo_afip_gov_ar:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "wsaahomo.afip.gov.ar"
+    environment:
+      TARGET: "wsaahomo.afip.gov.ar"
+      PRE_RESOLVE: 1
