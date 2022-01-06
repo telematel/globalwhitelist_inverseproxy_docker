@@ -367,3 +367,14 @@ services:
     environment:
       TARGET: "wswhomo.afip.gov.ar"
       PRE_RESOLVE: 1
+  desarrollo_urbano_com_ar:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "desarrollo.urbano.com.ar"
+    environment:
+      TARGET: "desarrollo.urbano.com.ar"
+      PRE_RESOLVE: 1
