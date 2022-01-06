@@ -356,3 +356,14 @@ services:
     environment:
       TARGET: "wsaahomo.afip.gov.ar"
       PRE_RESOLVE: 1
+  wswhomo_afip_gov_ar:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "wswhomo.afip.gov.ar"
+    environment:
+      TARGET: "wswhomo.afip.gov.ar"
+      PRE_RESOLVE: 1
