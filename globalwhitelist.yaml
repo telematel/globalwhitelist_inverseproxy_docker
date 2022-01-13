@@ -378,3 +378,14 @@ services:
     environment:
       TARGET: "desarrollo.urbano.com.ar"
       PRE_RESOLVE: 1
+  api_nimblr_ai:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api.nimblr.ai"
+    environment:
+      TARGET: "api.nimblr.ai"
+      PRE_RESOLVE: 1
