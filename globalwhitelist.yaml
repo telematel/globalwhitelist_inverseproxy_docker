@@ -389,3 +389,14 @@ services:
     environment:
       TARGET: "api.nimblr.ai"
       PRE_RESOLVE: 1
+  api_whatsapp_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api.whatsapp.com"
+    environment:
+      TARGET: "api.whatsapp.com"
+      PRE_RESOLVE: 1
