@@ -400,3 +400,25 @@ services:
     environment:
       TARGET: "api.whatsapp.com"
       PRE_RESOLVE: 1
+  cfdidescargamasivasolicitud_clouda_sat_gob_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "cfdidescargamasivasolicitud.clouda.sat.gob.mx"
+    environment:
+      TARGET: "cfdidescargamasivasolicitud.clouda.sat.gob.mx"
+      PRE_RESOLVE: 1
+  cfdidescargamasiva_clouda_sat_gob_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "cfdidescargamasiva.clouda.sat.gob.mx"
+    environment:
+      TARGET: "cfdidescargamasiva.clouda.sat.gob.mx"
+      PRE_RESOLVE: 1
