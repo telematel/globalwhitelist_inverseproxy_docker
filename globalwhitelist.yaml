@@ -422,3 +422,14 @@ services:
     environment:
       TARGET: "cfdidescargamasiva.clouda.sat.gob.mx"
       PRE_RESOLVE: 1
+  www2_agenciatributaria_gob_es:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "www2.agenciatributaria.gob.es"
+    environment:
+      TARGET: "www2.agenciatributaria.gob.es"
+      PRE_RESOLVE: 1
