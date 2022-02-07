@@ -433,3 +433,14 @@ services:
     environment:
       TARGET: "www2.agenciatributaria.gob.es"
       PRE_RESOLVE: 1
+  palena_sii_cl:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "palena.sii.cl"
+    environment:
+      TARGET: "palena.sii.cl"
+      PRE_RESOLVE: 1
