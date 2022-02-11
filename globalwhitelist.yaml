@@ -455,3 +455,14 @@ services:
     environment:
       TARGET: "pypi.org"
       PRE_RESOLVE: 1
+  files_pythonhosted_org:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "files.pythonhosted.org"
+    environment:
+      TARGET: "files.pythonhosted.org"
+      PRE_RESOLVE: 1
