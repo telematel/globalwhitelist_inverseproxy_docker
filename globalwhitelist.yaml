@@ -444,3 +444,14 @@ services:
     environment:
       TARGET: "palena.sii.cl"
       PRE_RESOLVE: 1
+  pypi_org:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "pypi.org"
+    environment:
+      TARGET: "pypi.org"
+      PRE_RESOLVE: 1
