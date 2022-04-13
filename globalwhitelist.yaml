@@ -466,3 +466,14 @@ services:
     environment:
       TARGET: "files.pythonhosted.org"
       PRE_RESOLVE: 1
+  www_banxico_org_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "www.banxico.org.mx"
+    environment:
+      TARGET: "www.banxico.org.mx"
+      PRE_RESOLVE: 1
