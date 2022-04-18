@@ -477,3 +477,14 @@ services:
     environment:
       TARGET: "www.banxico.org.mx"
       PRE_RESOLVE: 1
+  services_openerp_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "services.openerp.com"
+    environment:
+      TARGET: "services.openerp.com"
+      PRE_RESOLVE: 1
