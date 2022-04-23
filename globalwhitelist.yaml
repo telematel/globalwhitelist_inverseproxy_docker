@@ -488,3 +488,14 @@ services:
     environment:
       TARGET: "services.openerp.com"
       PRE_RESOLVE: 1
+  www_sat_gob_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "www.sat.gob.mx"
+    environment:
+      TARGET: "www.sat.gob.mx"
+      PRE_RESOLVE: 1
