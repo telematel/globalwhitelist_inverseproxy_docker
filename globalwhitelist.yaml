@@ -499,3 +499,14 @@ services:
     environment:
       TARGET: "www.sat.gob.mx"
       PRE_RESOLVE: 1
+  hgpay_wedoo_tech:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "hgpay.wedoo.tech"
+    environment:
+      TARGET: "hgpay.wedoo.tech"
+      PRE_RESOLVE: 1
