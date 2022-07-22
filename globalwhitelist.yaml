@@ -510,3 +510,47 @@ services:
     environment:
       TARGET: "hgpay.wedoo.tech"
       PRE_RESOLVE: 1
+  api_mercadolibre_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api.mercadolibre.com"
+    environment:
+      TARGET: "api.mercadolibre.com"
+      PRE_RESOLVE: 1
+  auth_mercadolibre_com_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "auth.mercadolibre.com.mx"
+    environment:
+      TARGET: "auth.mercadolibre.com.mx"
+      PRE_RESOLVE: 1
+  www_mercadolibre_com_mx:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "www.mercadolibre.com.mx"
+    environment:
+      TARGET: "www.mercadolibre.com.mx"
+      PRE_RESOLVE: 1
+  api_mercadopago_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api.mercadopago.com"
+    environment:
+      TARGET: "api.mercadopago.com"
+      PRE_RESOLVE: 1
