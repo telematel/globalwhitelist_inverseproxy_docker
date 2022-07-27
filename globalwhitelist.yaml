@@ -554,3 +554,14 @@ services:
     environment:
       TARGET: "api.mercadopago.com"
       PRE_RESOLVE: 1
+  sandbox_99minutos_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "sandbox.99minutos.com"
+    environment:
+      TARGET: "sandbox.99minutos.com"
+      PRE_RESOLVE: 1
