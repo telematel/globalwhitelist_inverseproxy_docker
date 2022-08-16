@@ -565,3 +565,14 @@ services:
     environment:
       TARGET: "sandbox.99minutos.com"
       PRE_RESOLVE: 1
+  auth_mercadolibre_com_ar:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "auth.mercadolibre.com.ar"
+    environment:
+      TARGET: "auth.mercadolibre.com.ar"
+      PRE_RESOLVE: 1
