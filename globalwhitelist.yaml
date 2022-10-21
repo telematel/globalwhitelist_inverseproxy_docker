@@ -576,3 +576,14 @@ services:
     environment:
       TARGET: "auth.mercadolibre.com.ar"
       PRE_RESOLVE: 1
+  api_stripe_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api.stripe.com"
+    environment:
+      TARGET: "api.stripe.com"
+      PRE_RESOLVE: 1
