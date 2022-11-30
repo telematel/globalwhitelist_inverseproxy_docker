@@ -587,3 +587,25 @@ services:
     environment:
       TARGET: "api.stripe.com"
       PRE_RESOLVE: 1
+  nominatim_openstreetmap_org:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "nominatim.openstreetmap.org"
+    environment:
+      TARGET: "nominatim.openstreetmap.org"
+      PRE_RESOLVE: 1
+  maps_googleapis_com:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "maps.googleapis.com"
+    environment:
+      TARGET: "maps.googleapis.com"
+      PRE_RESOLVE: 1
