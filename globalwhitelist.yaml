@@ -609,3 +609,14 @@ services:
     environment:
       TARGET: "maps.googleapis.com"
       PRE_RESOLVE: 1
+  nominatim_openstreetmap_org:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "nominatim.openstreetmap.org"
+    environment:
+      TARGET: "nominatim.openstreetmap.org"
+      PRE_RESOLVE: 1
