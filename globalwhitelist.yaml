@@ -620,3 +620,14 @@ services:
     environment:
       TARGET: "nominatim.openstreetmap.org"
       PRE_RESOLVE: 1
+  embat_api:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "api-embat-fw3hjuy3oa-ey.a.run.app"
+    environment:
+      TARGET: "api-embat-fw3hjuy3oa-ey.a.run.app"
+      PRE_RESOLVE: 1
