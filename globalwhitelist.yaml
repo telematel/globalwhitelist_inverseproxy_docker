@@ -631,3 +631,14 @@ services:
     environment:
       TARGET: "api-embat-fw3hjuy3oa-ey.a.run.app"
       PRE_RESOLVE: 1
+  oppwa:
+    image: tecnativa/whitelist
+    restart: unless-stopped
+    networks:
+      public:
+      shared:
+        aliases:
+          - "eu-test.oppwa.com"
+    environment:
+      TARGET: "eu-test.oppwa.com"
+      PRE_RESOLVE: 1
